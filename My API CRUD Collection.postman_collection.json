@@ -1,0 +1,778 @@
+{
+  "info": {
+    "_postman_id": "0173b86e-d052-4168-8bcd-f8418eebb734",
+    "name": "My API CRUD Collection",
+    "description": "Collection for testing API routes with CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46840859",
+    "_collection_link": "https://red-water-3951189.postman.co/workspace/%D0%A8%D0%BE%D1%85%D0%B6%D0%B0%D1%85%D0%BE%D0%BD-%D0%97%D0%BE%D1%85%D0%B8%D1%80%D0%BE%D0%B2's-Workspace~ab66bf4c-488a-42a3-8ca5-2ae5653f2264/collection/46840859-0173b86e-d052-4168-8bcd-f8418eebb734?action=share&source=collection_link&creator=46840859"
+  },
+  "item": [
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Create Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"123456\",\n  \"phone_number\": \"+998901234567\",\n  \"is_active\": true,\n  \"is_creator\": false\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/admin",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["admin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Admins",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/admin",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["admin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get One Admin",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/admin/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["admin", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Admin",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Updated User\",\n  \"email\": \"updated@example.com\",\n  \"password\": \"654321\",\n  \"phone_number\": \"+998909876543\",\n  \"is_active\": false,\n  \"is_creator\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/admin/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["admin", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Admin",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/admin/4",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["admin", "4"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "District",
+      "item": [
+        {
+          "name": "Create District",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Chilonzor\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/district",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["district"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Districts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/district",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["district"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get One District",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/district/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["district", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update District",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Yunusobod\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/district/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["district", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete District",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/district/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["district", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"client_id\": 1,\n    \"shop_tool_id\": 1,\n    \"period\": 5\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/order",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/order",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get One Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/order/9",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order", "9"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Order",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/order/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/order/5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["order", "5"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Shop",
+      "item": [
+        {
+          "name": "Create Shop",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"Asbob arenda optom\",\n    \"owner_id\":2,\n    \"phone_number\":\"+998881118888\",\n    \"district_id\":1,\n    \"address\":\"Chilonzor, 4uy\",\n    \"location\":\"fg\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/shop",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Shops",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shop",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get One Shop",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shop/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Shop",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\":\"Asbob arenda optom\",\n    \"owner_id\":2,\n    \"phone_number\":\"+998881118888\",\n    \"district_id\":1,\n    \"address\":\"Chilonzor, 4uy\",\n    \"location\":\"fg\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/shop/4",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop", "4"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Shop",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shop/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Shop Tool",
+      "item": [
+        {
+          "name": "Create Shop Tool",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shop_id\": 1,\n  \"tool_id\": 2,\n  \"rent_price\": 10\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/shop_tool",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop_tool"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Shop Tools",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shop_tool",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop_tool"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get One Shop Tool",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shop_tool/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop_tool", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Shop Tool",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shop_id\": 1,\n  \"tool_id\": 2,\n  \"rent_price\": 10\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/shop_tool/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop_tool", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Shop Tool",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shop_tool/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop_tool", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tool",
+      "item": [
+        {
+          "name": "Create Tool",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Hammer\",\n  \"tool_price\": 20000,\n  \"description\": \"ggg\",\n  \"brand\":\"Adidas\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/tool",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tool"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Tools",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tool",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tool"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get One Tool",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tool/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tool", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Tool",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Drill\",\n  \"tool_price\": 50000,\n  \"brand\":\"immer\", \n  \"description\":\"great immer drill\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/tool/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tool", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Tool",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tool/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tool", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ali Valiyev\",\n  \"email\": \"ali@example.com\",\n  \"password\": \"mypassword\",\n  \"phone_number\": \"+998901112233\",\n  \"address\":\"amirtemur kochasi 444-uy\",\n  \"role\":\"owner\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"ali@example.com\",\n  \"password\": \"mypassword\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/user",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get One User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/user/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Ali Updated\",\n  \"email\": \"ali2@example.com\",\n  \"password\": \"newpassword\",\n  \"phone_number\": \"+998907778899\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/user/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Send OTP",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"malika@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/send_otp",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "send_otp"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify OTP",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"malika@example.com\",\n  \"otp\": \"687406\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/verify_otp",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "verify_otp"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
