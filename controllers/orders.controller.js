@@ -2,43 +2,23 @@ const db = require("../config/db.config");
 
 const createorders = (req, res) => {
   const { client_id, shop_tool_id, period } = req.body;
-  let total_price = 0;
-
   db.query(
-    "SELECT rent_price from shop_tool where id=?",
-    [shop_tool_id],
-    (error, result) => {
+    `INSERT INTO orders (client_id, shop_tool_id, period, total_price) VALUES (?, ?, ?, 0)`,
+    [client_id, shop_tool_id, period],
+    (error, results) => {
       if (error) {
         console.log(error);
 
         return res.status(500).json({
-          message: "Error getting rent_price",
+          message: "Error adding new order",
           error: "Internal Server Error",
         });
       }
-
-      total_price += result[0].rent_price * period;
-      
-      db.query(
-        `INSERT INTO orders (client_id, shop_tool_id, period, total_price) VALUES (?, ?, ?, ?)`,
-        [client_id, shop_tool_id, period, total_price],
-        (error, results) => {
-          if (error) {
-            console.log(error);
-
-            return res.status(500).json({
-              message: "Error adding new order",
-              error: "Internal Server Error",
-            });
-          }
-          console.log(results);
-          res.status(201).json({
-            statusCode: 201,
-            message: "New order added",
-            id: results.insertId,
-          });
-        }
-      );
+      res.status(201).json({
+        statusCode: 201,
+        message: "New order added",
+        id: results.insertId,
+      });
     }
   );
 };
