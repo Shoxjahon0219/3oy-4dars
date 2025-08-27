@@ -1,5 +1,11 @@
 const router = require("express").Router();
 
+const {
+  findShop_by_tool_name,
+  findUsers_by_max_rent_price,
+  findUsers_by_district_by_date_by_tool,
+} = require("../controllers/smart_search");
+
 const AdminRouter = require("./admin.route");
 const districtRouter = require("./district.route");
 const orderRouter = require("./orders.route");
@@ -15,5 +21,12 @@ router.use("/shop", shopRouter);
 router.use("/shop_tool", shop_toolRouter);
 router.use("/tool", toolRouter);
 router.use("/user", userRouter);
+
+router.post("/find_by_tool_name", findShop_by_tool_name);
+router.post("/find_by_max_rent_price", findUsers_by_max_rent_price);
+router.post(
+  "/find_by_destrict_by_date_by_tool_name",
+  findUsers_by_district_by_date_by_tool
+);
 
 module.exports = router;

@@ -353,6 +353,27 @@
           "response": []
         },
         {
+          "name": "Get shop with district",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/shop?district_name=Samarkand",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["shop"],
+              "query": [
+                {
+                  "key": "district_name",
+                  "value": "Samarkand"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "Get One Shop",
           "request": {
             "method": "GET",
@@ -773,6 +794,78 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "Smart request 1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tool_name\":\"Drill\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/find_by_tool_name",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["find_by_tool_name"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Smart request 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"rent_price\":15\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/find_by_max_rent_price",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["find_by_max_rent_price"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Smart request 3",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"district_name\": \"Tashkent\",\r\n    \"start_date\": \"2025-08-01\",\r\n    \"end_date\": \"2025-08-31\",\r\n    \"tool_name\": \"Electric\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/find_by_destrict_by_date_by_tool_name",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["find_by_destrict_by_date_by_tool_name"]
+        }
+      },
+      "response": []
     }
   ]
 }
